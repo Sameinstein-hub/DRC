@@ -30,12 +30,12 @@ export default function Navbar({ currentPage, setPage }: NavbarProps) {
   return (
     <nav className="bg-[#0a1628] text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNav('home')}>
-            <img src="/images/logo.png" alt="DRC Logo" className="h-10 w-10 rounded-full object-cover" />
+            <img src="/images/logo.png" alt="DRC Logo" className="h-20 w-20 rounded-full object-cover logo-spin" />
             <div className="hidden sm:block">
               <span className="font-bold text-lg leading-tight">Data Revolution</span>
-              <span className="text-xs text-cyan-400 block -mt-1">Company®</span>
+              <span className="text-xs text-cyan-400 block -mt-1">Consults Ltd®</span>
             </div>
           </div>
 

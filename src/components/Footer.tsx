@@ -11,10 +11,10 @@ export default function Footer({ setPage }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/logo.png" alt="DRC Logo" className="h-10 w-10 rounded-full object-cover" />
+              <img src="/images/logo.png" alt="DRC Logo" className="h-16 w-16 rounded-full object-cover logo-spin" />
               <div>
                 <h3 className="font-bold text-white">Data Revolution</h3>
-                <p className="text-xs text-cyan-400">Company®</p>
+                <p className="text-xs text-cyan-400">Consults Ltd®</p>
               </div>
             </div>
             <p className="text-sm leading-relaxed">
@@ -44,15 +44,15 @@ export default function Footer({ setPage }: FooterProps) {
           <div>
             <h4 className="font-semibold text-white mb-4">Contact Info</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-cyan-400 shrink-0" /> info@datarevolutioncompany.com</li>
+              <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-cyan-400 shrink-0" /> info@datarevolutionconsults.com</li>
               <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 text-cyan-400 shrink-0" /> +2348162023780</li>
-              <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-cyan-400 shrink-0" /> Lagos, Nigeria</li>
+              <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-cyan-400 shrink-0" /> Adetayo Sobowale Street Flat 2 O&A Road ikenne Sagamu Ogun State, Nigeria.</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 text-center text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Data Revolution Company®. All rights reserved. | Founded by Dr. Samson Oluwayomi</p>
+          <p>© {new Date().getFullYear()} Data Revolution Consults Ltd®. All rights reserved. | Designed by <a href="https://www.sameinstein.tech/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 underline transition-colors">Sameinstein ®</a></p>
         </div>
       </div>
     </footer>

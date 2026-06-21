@@ -58,7 +58,7 @@ export default function MentorDashboard() {
 
       <div className="flex">
         {/* Sidebar */}
-        <aside className="hidden lg:block w-64 bg-[#0a1628] text-white min-h-screen sticky top-16">
+        <aside className="hidden lg:block w-64 bg-[#0a1628] text-white min-h-screen sticky top-20">
           <div className="p-4 border-b border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold">

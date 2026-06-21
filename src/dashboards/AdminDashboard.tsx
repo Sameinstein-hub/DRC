@@ -38,13 +38,13 @@ export default function AdminDashboard() {
     <div className="min-h-screen bg-gray-50">
       <div className="flex">
         {/* Sidebar */}
-        <aside className="hidden lg:block w-64 bg-[#0a1628] text-white min-h-screen sticky top-16">
+        <aside className="hidden lg:block w-64 bg-[#0a1628] text-white min-h-screen sticky top-20">
           <div className="p-4 border-b border-white/10">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center font-bold">A</div>
               <div>
                 <div className="font-semibold text-sm">Admin Panel</div>
-                <div className="text-xs text-gray-400">Data Revolution Co.</div>
+                <div className="text-xs text-gray-400">Data Revolution Consults Ltd.</div>
               </div>
             </div>
           </div>
@@ -512,7 +512,7 @@ export default function AdminDashboard() {
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Organization Name</label>
-                    <input defaultValue="Data Revolution Company®" className="w-full px-3 py-2 border rounded-lg text-sm" readOnly />
+                    <input defaultValue="Data Revolution Consults Ltd®" className="w-full px-3 py-2 border rounded-lg text-sm" readOnly />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Mentor Plan Fee (₦) — Lifetime</label>

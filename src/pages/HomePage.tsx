@@ -16,9 +16,12 @@ export default function HomePage({ setPage }: HomePageProps) {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <img src="/images/logo.png" alt="DRC Logo" className="h-36 w-36 rounded-full object-cover border-4 border-white/10 shadow-2xl animate-fade-in logo-spin" />
+            </div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm mb-6">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Data Revolution Company® — Est. 2025
+              Data Revolution Consults Ltd® — Est. 2025
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
               Empowering the Next Generation of{' '}
@@ -51,7 +54,7 @@ export default function HomePage({ setPage }: HomePageProps) {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Our Mission</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Data Revolution Company® is a Nigerian-based organization devoted to promoting digital literacy, data-driven research, and societal transformation through education, mentorship, and innovation. We provide structured learning opportunities in data analysis, web and app development, artificial intelligence, machine learning, research translation, and freelancing integration.
+              Data Revolution Consults Ltd® is a Nigerian-based organization devoted to promoting digital literacy, data-driven research, and societal transformation through education, mentorship, and innovation. We provide structured learning opportunities in data analysis, web and app development, artificial intelligence, machine learning, research translation, and freelancing integration.
             </p>
           </div>
 

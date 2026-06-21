@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { CheckCircle, Upload } from 'lucide-react';
+import { useApp } from '../store';
 
 export default function MentorEnrolPage() {
+  const { addMentor } = useApp();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
-    fullName: '', email: '', phone: '', location: '', profession: '',
+    fullName: '', email: '', password: '', phone: '', location: '', profession: '',
     expertise: '', experience: '', mentorshipArea: '', availability: '',
     digitalInterest: '', consent: false,
   });
@@ -17,6 +19,26 @@ export default function MentorEnrolPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newMentor = {
+      id: `mentor-${Date.now()}`,
+      name: form.fullName,
+      email: form.email.toLowerCase().trim(),
+      password: form.password,
+      role: 'mentor' as const,
+      phone: form.phone,
+      location: form.location,
+      profession: form.profession,
+      expertise: form.expertise,
+      experience: Number(form.experience) || 0,
+      mentorshipArea: form.mentorshipArea,
+      availability: form.availability,
+      bio: `Experienced specialist in ${form.expertise}. Dedicated to guided growth and community transformation.`,
+      skills: [form.expertise],
+      subscriptionStatus: 'active' as const,
+      subscriptionExpiry: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      assignedMentees: [],
+    };
+    addMentor(newMentor);
     setSubmitted(true);
   };
 
@@ -38,7 +60,7 @@ export default function MentorEnrolPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Become a Mentor / Validator</h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Join Data Revolution Company® as a mentor and help shape the next generation of digital innovators. Participate in structured learning, guide mentees, assign gigs, and contribute to community transformation.
+            Join Data Revolution Consults Ltd® as a mentor and help shape the next generation of digital innovators. Participate in structured learning, guide mentees, assign gigs, and contribute to community transformation.
           </p>
         </div>
       </section>
@@ -61,6 +83,12 @@ export default function MentorEnrolPage() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                 <input name="email" type="email" value={form.email} onChange={handleChange} required
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Choose Password *</label>
+                <input name="password" type="password" value={form.password} onChange={handleChange} required
+                  placeholder="Minimum 6 characters" minLength={6}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none" />
               </div>
               <div>
@@ -135,7 +163,7 @@ export default function MentorEnrolPage() {
               <input name="consent" type="checkbox" checked={form.consent} onChange={handleChange} required
                 className="mt-1 w-4 h-4 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500" />
               <label className="text-sm text-gray-600">
-                I consent to share my information with Data Revolution Company® for the purpose of the mentorship programme. I understand that I will need to complete the one-time ₦50,000 Mentor Plan payment to access full platform features.
+                I consent to share my information with Data Revolution Consults Ltd® for the purpose of the mentorship programme. I understand that I will need to complete the one-time ₦50,000 Mentor Plan payment to access full platform features.
               </label>
             </div>
 

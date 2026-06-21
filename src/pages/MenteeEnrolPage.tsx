@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
+import { useApp } from '../store';
 
 export default function MenteeEnrolPage() {
+  const { addMentee } = useApp();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
-    fullName: '', age: '', gender: '', email: '', phone: '', location: '',
+    fullName: '', age: '', gender: '', email: '', password: '', phone: '', location: '',
     educationLevel: '', digitalInterest: '', skillLevel: '', guardianName: '',
     guardianContact: '', reason: '', consent: false,
   });
@@ -17,6 +19,24 @@ export default function MenteeEnrolPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newMentee = {
+      id: `mentee-${Date.now()}`,
+      name: form.fullName,
+      email: form.email.toLowerCase().trim(),
+      password: form.password,
+      role: 'mentee' as const,
+      phone: form.phone,
+      location: form.location,
+      age: Number(form.age) || 0,
+      gender: form.gender,
+      educationLevel: form.educationLevel,
+      digitalInterest: form.digitalInterest,
+      skillLevel: form.skillLevel,
+      guardianName: form.guardianName,
+      guardianContact: form.guardianContact,
+      reasonForJoining: form.reason,
+    };
+    addMentee(newMentee);
     setSubmitted(true);
   };
 
@@ -72,6 +92,12 @@ export default function MenteeEnrolPage() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                 <input name="email" type="email" value={form.email} onChange={handleChange} required
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Choose Password *</label>
+                <input name="password" type="password" value={form.password} onChange={handleChange} required
+                  placeholder="Minimum 6 characters" minLength={6}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none" />
               </div>
               <div>
@@ -142,7 +168,7 @@ export default function MenteeEnrolPage() {
               <input name="consent" type="checkbox" checked={form.consent} onChange={handleChange} required
                 className="mt-1 w-4 h-4 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500" />
               <label className="text-sm text-gray-600">
-                I consent to share my information with Data Revolution Company® for the purpose of the mentee programme and agree to abide by the programme's code of conduct.
+                I consent to share my information with Data Revolution Consults Ltd® for the purpose of the mentee programme and agree to abide by the programme's code of conduct.
               </label>
             </div>
 

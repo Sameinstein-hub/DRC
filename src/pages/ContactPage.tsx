@@ -10,7 +10,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Reach out to Data Revolution Company® for partnerships, mentorship, enrolment, sponsorship, donations, or general enquiries.
+            Reach out to Data Revolution Consults Ltd® for partnerships, mentorship, enrolment, sponsorship, donations, or general enquiries.
           </p>
         </div>
       </section>
@@ -27,7 +27,7 @@ export default function ContactPage() {
                     <Mail size={20} className="text-cyan-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-sm text-gray-600">info@datarevolutioncompany.com</div>
+                      <div className="text-sm text-gray-600">info@datarevolutionconsults.com</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -41,7 +41,7 @@ export default function ContactPage() {
                     <MapPin size={20} className="text-cyan-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-medium text-gray-900">Address</div>
-                      <div className="text-sm text-gray-600">Lagos, Nigeria</div>
+                      <div className="text-sm text-gray-600">Adetayo Sobowale Street Flat 2 O&A Road ikenne Sagamu Ogun State, Nigeria.</div>
                     </div>
                   </li>
                 </ul>
@@ -55,9 +55,9 @@ export default function ContactPage() {
                   <h3 className="font-bold">Partnership Enquiry</h3>
                 </div>
                 <p className="text-cyan-100 text-sm leading-relaxed">
-                  Interested in partnering with Data Revolution Company®? We welcome collaboration with educational institutions, NGOs, corporate organizations, and development agencies.
+                  Interested in partnering with Data Revolution Consults Ltd®? We welcome collaboration with educational institutions, NGOs, corporate organizations, and development agencies.
                 </p>
-                <p className="text-cyan-200 text-sm mt-3">partnerships@datarevolutioncompany.com</p>
+                <p className="text-cyan-200 text-sm mt-3">partnerships@datarevolutionconsults.com</p>
               </div>
             </div>
 
